@@ -1,0 +1,65 @@
+/* PollPage.css */
+
+/* Custom styles for the PollPage component */
+.poll-page-container {
+    padding: 20px;
+}
+
+.poll-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.poll-card {
+    margin-bottom: 20px;
+}
+
+.poll-question {
+    font-weight: bold;
+}
+
+.poll-options {
+    list-style: none;
+    padding-left: 0;
+}
+
+.poll-option {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.visualise-button {
+    margin-top: 20px;
+}
+
+.chart-container {
+    margin-top: 20px;
+}
+
+.breakdown-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.option-column {
+    margin-bottom: 20px;
+}
+
+.option-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.user-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.user-item {
+    margin-bottom: 5px;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import { Button, Card, Container, Row, Col } from 'react-bootstrap';
+import './PollPage.css'; // Import custom CSS file for additional styling
 
 export default function PollPage() {
     const { pollId } = useParams();
