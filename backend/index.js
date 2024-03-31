@@ -16,7 +16,7 @@ const io = socketIo(server, {
     credentials: true
   }
 });
-const port = 5000;
+const port = 3000;
 
 connectToMongo();
 app.use(cors());
