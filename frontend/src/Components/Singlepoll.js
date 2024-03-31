@@ -16,13 +16,13 @@ const Singlepoll = () => {
   useEffect(() => {
     const fetchPoll = async () => {
       try {
-        const pollResponse = await fetch(`http://localhost:5000/api/pollResponses/fetchpoll/${userId}/${pollId}`);
+        const pollResponse = await fetch(`https://polling-chi.vercel.app/api/pollResponses/fetchpoll/${userId}/${pollId}`);
         const pollResponseData = await pollResponse.json();
   
         const responseOption = pollResponseData.selectedOption || null;
         setSelectedOption(responseOption);
         console.log("responseOption",responseOption)
-        const response = await fetch(`http://localhost:5000/api/polls/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/polls/${pollId}`);
         if (response.ok) {
           const pollData = await response.json();
           setPoll({ ...pollData.poll, selectedOption: responseOption });
@@ -40,7 +40,7 @@ const Singlepoll = () => {
   
   const checkHasVoted = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/pollResponses/hasVoted/${userId}/${pollId}`);
+      const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/hasVoted/${userId}/${pollId}`);
       if (response.ok) {
         const data = await response.json();
         if (data.hasVoted) {
@@ -57,7 +57,7 @@ const Singlepoll = () => {
 
   const submitPollResponse = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/pollResponses', {
+      const response = await fetch('https://polling-chi.vercel.app/api/pollResponses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

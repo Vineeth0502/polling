@@ -55,7 +55,7 @@ window.location.href = '/studentlogin';      }
   useEffect(() => {
     const fetchPoll = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/polls/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/polls/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setPoll(data.poll);
@@ -73,7 +73,7 @@ window.location.href = '/studentlogin';      }
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/comments/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/comments/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setComments(data.data);
@@ -91,7 +91,7 @@ window.location.href = '/studentlogin';      }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/comments', {
+      const response = await fetch('https://polling-chi.vercel.app/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -115,7 +115,7 @@ window.location.href = '/studentlogin';      }
         const fetchPollPercentages = async () => {
             try {
                 // Fetch poll percentages
-                const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+                const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch poll percentages');
                 }

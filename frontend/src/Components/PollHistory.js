@@ -10,7 +10,7 @@ const PollHistory = () => {
   
   const fetchPollHistory = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/polls/history/deactive/${userId}`);
+      const response = await fetch(`https://polling-chi.vercel.app/api/polls/history/deactive/${userId}`);
       if (response.ok) {
         const data = await response.json();
         setPolls(data.userPolls); 
@@ -24,7 +24,7 @@ const PollHistory = () => {
 
   const fetchPollPercentages = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+      const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
       if (response.ok) {
         const data = await response.json();
         // Update the state with the selected poll ID and its percentages
@@ -40,7 +40,7 @@ const PollHistory = () => {
 
   const reopenPolling = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/polls/reopen/${pollId}`, {
+      const response = await fetch(`https://polling-chi.vercel.app/api/polls/reopen/${pollId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const PollHistory = () => {
 
   const deletePoll = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/polls/${pollId}`, {
+      const response = await fetch(`https://polling-chi.vercel.app/api/polls/${pollId}`, {
         method: 'DELETE'
       });
       if (response.ok) {

@@ -9,7 +9,7 @@ const PollResults = () => {
   
   const fetchPollHistory = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/polls/history/active/${userId}`);
+      const response = await fetch(`https://polling-chi.vercel.app/api/polls/history/active/${userId}`);
       if (response.ok) {
         const data = await response.json();
         setPolls(data.userPolls); 
@@ -23,7 +23,7 @@ const PollResults = () => {
 
   const fetchPollPercentages = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+      const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
       if (response.ok) {
         const data = await response.json();
         // Update the state with the selected poll ID and its percentages
@@ -39,7 +39,7 @@ const PollResults = () => {
 
   const endPolling = async (pollId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/polls/end/${pollId}`, {
+      const response = await fetch(`https://polling-chi.vercel.app/api/polls/end/${pollId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ export default function PollPage() {
     useEffect(() => {
         const fetchPollData = async () => {
             try {
-                const pollResponse = await fetch(`http://localhost:5000/api/polls/${pollId}`);
+                const pollResponse = await fetch(`https://polling-chi.vercel.app/api/polls/${pollId}`);
                 if (!pollResponse.ok) {
                     throw new Error('Failed to fetch poll data');
                 }
@@ -29,7 +29,7 @@ export default function PollPage() {
     useEffect(() => {
         const fetchVotesData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+                const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch votes data');
                 }
@@ -42,7 +42,7 @@ export default function PollPage() {
                 for (const option in formattedData) {
                     const userIds = formattedData[option];
                     const userNames = await Promise.all(userIds.map(async userId => {
-                        const userResponse = await fetch(`http://localhost:5000/api/studentauth/getusername/${userId}`);
+                        const userResponse = await fetch(`https://polling-chi.vercel.app/api/studentauth/getusername/${userId}`);
                         if (userResponse.ok) {
                             const userData = await userResponse.json();
                             return userData.username;
@@ -62,7 +62,7 @@ export default function PollPage() {
     useEffect(() => {
         const fetchPollPercentages = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+                const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch poll percentages');
                 }

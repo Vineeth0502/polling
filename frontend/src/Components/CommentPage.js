@@ -57,7 +57,7 @@ window.location.href = '/studentdashboard';      }
   useEffect(() => {
     const fetchPoll = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/polls/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/polls/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setPoll(data.poll);
@@ -75,7 +75,7 @@ window.location.href = '/studentdashboard';      }
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/comments/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/comments/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setComments(data.data);
@@ -93,7 +93,7 @@ window.location.href = '/studentdashboard';      }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/comments', {
+      const response = await fetch('https://polling-chi.vercel.app/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ window.location.href = '/studentdashboard';      }
     const fetchPollPercentages = async () => {
       try {
         // Fetch poll percentages
-        const response = await fetch(`http://localhost:5000/api/pollResponses/${pollId}`);
+        const response = await fetch(`https://polling-chi.vercel.app/api/pollResponses/${pollId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch poll percentages');
         }
@@ -192,7 +192,7 @@ window.location.href = '/studentdashboard';      }
         console.log(userIds);
         const usernameData = await Promise.all(
           userIds.map(async userId => {
-            const response = await axios.get(`http://localhost:5000/api/studentauth/getusername/${userId}`);
+            const response = await axios.get(`https://polling-chi.vercel.app/api/studentauth/getusername/${userId}`);
             return { [userId]: response.data.username };
           })
         );
