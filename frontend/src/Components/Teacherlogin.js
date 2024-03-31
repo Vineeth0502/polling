@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css'; // Import CSS file for additional styles
+import './Home.css'; 
 
 function TeacherLogin() {
     const [credentials, setCredentials] = useState({ email: "", password: "" });

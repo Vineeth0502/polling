@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-
+import './Home.css'; 
 
 function App() {
 
@@ -36,33 +35,27 @@ function App() {
     };
 
 
-
-
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
-    <div className="card" style={{width: "34rem"}}>
-        <div class="card-body">
-        <form className="d-flex flex-column my-5" onSubmit={handleSubmit}>
-
-        <input className='mb-4' id='form1' type='email' placeholder='Email Address' value={credentials.email} onChange={onChange} name="email"/>
-        <input className='mb-4' id='form2' type='password' placeholder='Password' value={credentials.password} onChange={onChange} name="password"/>
-
-        <div className="d-flex justify-content-center align-items-center pb-3">
-            <a href="!#">Forgot password?</a>
+    <div className="container-fluid text-center py-5 background-gradient d-flex justify-content-center align-items-center">
+        <div className="card login-card">
+            <div className="card-body">
+                <h2 className="mb-4 text-blue">Student Login</h2>
+                <form className="d-flex flex-column my-5" onSubmit={handleSubmit}>
+                    <input className='form-control mb-4' type='email' placeholder='Email Address' value={credentials.email} onChange={onChange} name="email" />
+                    <input className='form-control mb-4' type='password' placeholder='Password' value={credentials.password} onChange={onChange} name="password" />
+                    <div className="d-flex justify-content-between align-items-center pb-3">
+                        <a href="!#" className="forgot-password-link text-blue">Forgot password?</a>
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
+                    {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
+                    <div className="text-center">
+                        <p className="text-blue">Not a member? <Link to="/studentregister" className="text-primary">Register</Link></p>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <button type="submit" className="btn btn-primary mb-4">Sign in</button>
-        {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
-
-        <div className="text-center">
-            <p>Not a member?<Link to="/studentregister">Register</Link></p>
-        </div>
-
-        </form>
-        </div>
-        </div>
-        </div>
-  );
+    </div>
+);
 }
 
 export default App;

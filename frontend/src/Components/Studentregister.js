@@ -54,29 +54,25 @@ function App() {
 
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
-    <div className="card" style={{width: "34rem"}}>
-        <div class="card-body">
-        <form className="d-flex flex-column my-5" onSubmit={handleSubmit}>
-
-        <input className='mb-4' id='form1' type='text' placeholder='Name' value={credentials.name} onChange={onChange} name='name'/>
-        <input className='mb-4' id='form2' type='email' placeholder='Email' value={credentials.email} onChange={onChange} name="email"/>
-        <input className='mb-4' id='form2' type='password' placeholder='Password'value={credentials.password} onChange={onChange} name="password"/>
-
-        <button type="submit" className="btn btn-primary mb-4">Create Account</button>
-        {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
-        {successMessage && <div className="alert alert-success" role="alert">{successMessage}</div>}
-
-
-        <div className="text-center">
-            <p>Already a member? <Link to="/studentlogin">Login</Link></p>
+    <div className="container-fluid text-center py-5 background-gradient d-flex justify-content-center align-items-center">
+        <div className="card login-card">
+            <div className="card-body">
+                <h2 className="mb-4 text-blue">Student Registration</h2>
+                <form className="d-flex flex-column my-5" onSubmit={handleSubmit}>
+                    <input className='form-control mb-4' type='text' placeholder='Name' value={credentials.name} onChange={onChange} name='name' />
+                    <input className='form-control mb-4' type='email' placeholder='Email' value={credentials.email} onChange={onChange} name="email" />
+                    <input className='form-control mb-4' type='password' placeholder='Password' value={credentials.password} onChange={onChange} name="password" />
+                    <button type="submit" className="btn btn-primary btn-block mb-4">Create Account</button>
+                    {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
+                    {successMessage && <div className="alert alert-success" role="alert">{successMessage}</div>}
+                    <div className="text-center">
+                        <p className="text-blue">Already a member? <Link to="/studentlogin" className="text-primary">Login</Link></p>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        </form>
-        </div>
-        </div>
-        </div>
-  );
+    </div>
+);
 }
 
 export default App;

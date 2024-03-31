@@ -230,7 +230,7 @@ window.location.href = '/studentdashboard';      }
                   ))}
                 </ul>
               </div>
-              <canvas id="barChart" style={{marginTop: "30px"}}></canvas>
+              <canvas id="barChart" style={{marginTop: "100px"}}></canvas>
 
             </div>
             
@@ -241,7 +241,7 @@ window.location.href = '/studentdashboard';      }
        
           {/* Display comments */}
           <div className="card">
-            <div className="card-body">
+            <div className="card-body" style={{height: "299px", overflowY: "auto"}}>
               <h5 className="card-title">Comments</h5>
               <ul className="list-group list-group-flush">
       {comments.map((comment, idx) => (
@@ -254,7 +254,7 @@ window.location.href = '/studentdashboard';      }
             </div>
           </div>
 
-          <div className="card mb-3">
+          <div className="card mb-3" style={{marginTop: "10px", height: "230px"}}>
             <div className="card-body">
               <h5 className="card-title">Write your comment</h5>
               <form onSubmit={handleSubmit}>
@@ -263,6 +263,7 @@ window.location.href = '/studentdashboard';      }
                     className="form-control"
                     rows="5"
                     value={newComment}
+                    style={{height: "50px"}}
                     onChange={(e) => setNewComment(e.target.value)}
                   ></textarea>
                 </div>
