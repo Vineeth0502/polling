@@ -13,7 +13,7 @@ module.exports = (io) => {
       const poll = await Poll.create({ question, options, userId, isActive });
   
       // Generate QR code for poll ID
-      const pollURL = `http://localhost:3000/singlepoll/${poll.id}`;
+      const pollURL = `https://polling-3zpd.vercel.app/singlepoll/${poll.id}`;
       const qrCodeDataURL = await QRCode.toDataURL(pollURL);
       // const qrCodeData = JSON.stringify({ pollId: poll.id });
       // const qrCodeDataURL = await QRCode.toDataURL(qrCodeData);
