@@ -16,7 +16,7 @@ const PastComment = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://polling-chi.vercel.app');
     setSocket(newSocket);
 
     return () => {
