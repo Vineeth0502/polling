@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'https://polling-3zpd.vercel.app', // Adjust this to your frontend URL
+    origin: ' * ', // Adjust this to your frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }
